@@ -173,7 +173,7 @@
         "artifactsBaseUrl": "",
         "description": "URL to acquire other VM-Series for Azure templates"
       },
-      "defaultValue": "https://raw.githubusercontent.com/djspears/master/azure-vnet"
+      "defaultValue": "https://raw.githubusercontent.com/djspears/azure-vnet/master"
 
     },
     "PublicIPNewOrExisting": {
