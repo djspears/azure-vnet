@@ -26,6 +26,12 @@
     "subnet2StartAddress": {
       "type": "string"
     },
+     "subnet3Name": {
+      "type": "string"
+    },
+    "subnet3StartAddress": {
+      "type": "string"
+    },
     "virtualNetworkName": {
       "type": "string"
     },
@@ -43,7 +49,8 @@
       "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
       "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet0Name'))]",
       "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
-      "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]"
+      "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]",
+      "subnet3Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet3Name'))]"
   },
   "resources": [
     {
@@ -102,6 +109,26 @@
               "privateIPAllocationMethod": "Dynamic",
               "subnet": {
                 "id": "[variables('subnet2Ref')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "[concat(parameters('nicName'), '3')]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "location": "[parameters('location')]",
+      "apiVersion": "2015-06-15",
+      "properties": {
+        "enableIPForwarding": true,
+        "ipConfigurations": [
+          {
+            "name": "ipconfig-dmz",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "subnet": {
+                "id": "[variables('subnet3Ref')]"
               }
             }
           }
