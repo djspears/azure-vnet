@@ -9,4 +9,4 @@
 - This firewall deploys with 4 interfaces.  1 MGMT and 3 data plane. (NEW)
 - This template also supports deloyment into existing VNETs and storage accounts within the same region.  They can be in different Resource Groups.
 - The template also supports deployment into a new or existing Resource Group.
-- Added support for DS3_v2 and DS_v4 VMs and Premium Storage.
+- Added support for DS3_v2 and DS_v4 VMs and Premium Storage. (NEW)
